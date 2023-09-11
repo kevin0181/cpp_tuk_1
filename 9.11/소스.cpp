@@ -22,8 +22,8 @@ int main() {
      * 2. addressOf (n); (n에 할당된 데이터 타입)
      * 3. typeid (n).name; (이건 뭐누?)
      */
-
     int n;
-
-
+    cout << "int의 크기(byte) : " << sizeof(n) << '\n';
+    cout << "n의 주소 : " << addressof(n) << '\n';
+    cout << "n의 자료형 : " << typeid(n).name() << '\n';
 }
