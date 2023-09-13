@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.26"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "9_11::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-9_11-Debug-76d7ee4c0dc0c4ce3278.json",
+					"jsonFile" : "target-9_11-Release-14afef20478b047f1843.json",
 					"name" : "9_11",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/yuyeongbin/C++/9.11/cmake-build-debug",
+		"build" : "/Users/yuyeongbin/C++/9.11/cmake-build-release",
 		"source" : "/Users/yuyeongbin/C++/9.11"
 	},
 	"version" : 

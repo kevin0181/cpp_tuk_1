@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(9_11 소스.cpp
         save.cpp
-        save.h)
+        save.h
+        bigint.h
+        bigint.cpp)

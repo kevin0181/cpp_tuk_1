@@ -61,6 +61,12 @@ build CMakeFiles/9_11.dir/save.cpp.o: CXX_COMPILER__9_11_unscanned_Debug /Users/
   OBJECT_DIR = CMakeFiles/9_11.dir
   OBJECT_FILE_DIR = CMakeFiles/9_11.dir
 
+build CMakeFiles/9_11.dir/bigint.cpp.o: CXX_COMPILER__9_11_unscanned_Debug /Users/yuyeongbin/C++/9.11/bigint.cpp || cmake_object_order_depends_target_9_11
+  DEP_FILE = CMakeFiles/9_11.dir/bigint.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/9_11.dir
+  OBJECT_FILE_DIR = CMakeFiles/9_11.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target 9_11
@@ -69,7 +75,7 @@ build CMakeFiles/9_11.dir/save.cpp.o: CXX_COMPILER__9_11_unscanned_Debug /Users/
 #############################################
 # Link the executable 9_11
 
-build 9_11: CXX_EXECUTABLE_LINKER__9_11_Debug CMakeFiles/9_11.dir/소스.cpp.o CMakeFiles/9_11.dir/save.cpp.o
+build 9_11: CXX_EXECUTABLE_LINKER__9_11_Debug CMakeFiles/9_11.dir/소스.cpp.o CMakeFiles/9_11.dir/save.cpp.o CMakeFiles/9_11.dir/bigint.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/9_11.dir
   POST_BUILD = :

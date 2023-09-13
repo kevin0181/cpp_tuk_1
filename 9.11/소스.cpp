@@ -8,22 +8,11 @@
 
 #include <iostream>  // -> 토큰 5개 (컴퓨터가 나눠서 인식하는거)  #, include, <, iostream, >
 #include "save.h"
+#include "bigint.h"
 
 using namespace std;
 
 int main() {
-    // identifier 식별자.. int -> 식별자 n -> 식별자 (식별자 두개가 합쳐짐) (토큰 2개)
-    // data type - identifier
-    // int 형, 즉 정수형 메모리를 이 만큼 주세요. (int에 정해진 메모리가 있을꺼임)
-    // 지정해준 int형 메모리, 즉, 데이터 타입을 n이라는 이름으로 선언
-    // n 에 대해서 3가지 요청을 지원함
-    /*
-     * 1. sizeOf (n); (n에 할당된 주소의 크기)
-     * 2. addressOf (n); (n에 할당된 데이터 타입)
-     * 3. typeid (n).name; (이건 뭐누?)
-     */
-    int n;
-    cout << "int의 크기(byte) : " << sizeof(n) << '\n';
-    cout << "n의 주소 : " << addressof(n) << '\n';
-    cout << "n의 자료형 : " << typeid(n).name() << '\n';
+    bigint();
+//    save("소스.cpp");
 }
