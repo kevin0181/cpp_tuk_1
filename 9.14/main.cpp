@@ -33,10 +33,10 @@ int main() {
     }
     for (int num: numbers) { // 범위 기반 for 문
         cout << num << '\t';
-//        cout << format("{:4d}",num) << '\n'; 왜 안될까
+//        cout << format("{:4d}",num) << '\n'; //왜 안될까
     }
 
-    std::cout << std::format("Hello {}!\n", "world");
+//    std::cout << std::format("Hello {}!\n", "world");
 
     cout << '\n';
 
