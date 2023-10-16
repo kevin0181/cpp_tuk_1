@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "10_12_",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "10_12_::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-10_12_-Debug-78ab8d34bb278c0dc485.json",
+					"name" : "10_12_",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/10.12_\ubcf5\uc2b5/cmake-build-debug",
+		"source" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/10.12_\ubcf5\uc2b5"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
