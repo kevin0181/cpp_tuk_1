@@ -27,8 +27,6 @@ void bigint() {
     cout << j2 << '\n';
     cout << j3 << '\n';
     cout << LONG_MAX << '\n';
-//    cout << k_max << '\n';
-//    cout << k_min << '\n';
 
     // 할당 및 초기화
 //    int n = 123;        //초기화 - initialization

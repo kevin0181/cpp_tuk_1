@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/yuyeongbin/C++/9.11/cmake-build-release"
+			"value" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/9.11/cmake-build-release"
 		},
 		{
 			"name" : "9_11_IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/yuyeongbin/C++/9.11"
+			"value" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/9.11"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/yuyeongbin/C++/9.11/cmake-build-release"
+			"value" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/9.11/cmake-build-release"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/yuyeongbin/C++/9.11/cmake-build-release/CMakeFiles/pkgRedirects"
+			"value" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/9.11/cmake-build-release/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/yuyeongbin/C++/9.11"
+			"value" : "/Users/yuyeongbin/Documents/Obsidian Vault/\ub300\ud559\uad50/1-2/C++/9.11"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
