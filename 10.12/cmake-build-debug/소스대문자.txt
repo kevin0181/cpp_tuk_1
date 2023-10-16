@@ -1,0 +1,200 @@
+//------------------------------------------------------------------------------------------
+// 2023. 2학기 C++ 10월 12일 목요일                         월56목34      (6주 2일)
+//------------------------------------------------------------------------------------------
+// SORT - QSORT
+//------------------------------------------------------------------------------------------
+// [과제] 정렬 관련 내용을 구글에서 찾아보기
+//------------------------------------------------------------------------------------------
+
+#INCLUDE <IOSTREAM>
+#INCLUDE <RANDOM>
+#INCLUDE <FSTREAM>
+#INCLUDE <CSTDLIB>
+
+USING NAMESPACE STD;
+DEFAULT_RANDOM_ENGINE DRE;
+UNIFORM_INT_DISTRIBUTION UID;
+
+INT CUSTOM_SORT(CONST VOID *, CONST VOID *);
+
+INT MAIN() {
+
+//    OFSTREAM OUT{"INT 만개"};
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        OUT << UID(DRE) << ' ';
+//        IF (((I + 1) % 10) == 0) {
+//            OUT << '\N';
+//        }
+//    }
+
+// [문제] 파일 'INT 만개'에는 INT값 1'0000개가 저장되어 있다.
+// 가장 작은 값을 찾아 화면에 출력해라.
+// ------------------- 내 코드 --------------------------
+//    INT ARRAY[1'0000];
+//    STRING LINE;
+//    IFSTREAM FILE("INT 만개", IOS::IN);
+//
+//    IF (FILE.IS_OPEN()) {
+//        INT I = 0;
+//        WHILE (GETLINE(FILE, LINE)) {
+//            ARRAY[I++] = STOI(LINE);
+//        }
+//    }
+//
+//    INT MIN = ARRAY[0];
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        IF (MIN < ARRAY[I]) {
+//            MIN = ARRAY[I];
+//        }
+//    }
+//
+//    COUT << MIN << ENDL;
+
+    // ------------- 교수님 코드 -------------------
+
+//    IFSTREAM IN{"INT 만개"}; //RAII
+//
+//    IF (NOT IN) { // ! 이거보다 NOT 이게 더 좋다 그럼
+//        COUT << "파일을 열 수 없다" << "\N";
+//        RETURN 0;
+//    }
+//
+//    INT NUM;
+//    INT MIN{NUMERIC_LIMITS<INT>::MAX()}; // 나중에 이게 뭔지 검색해바야할듯?
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        IN >> NUM;
+//        IF (MIN > NUM) {
+//            MIN = NUM;
+//        }
+//    }
+//
+//    COUT << "최솟값 - " << MIN << '\N';
+
+// [문제] 파일 'INT 만개'에는 INT값 1'0000개가 저장되어 있다.
+// 오름 차순으로 정렬해서 결과를 화면에 출력하라.
+    // --------------------- 내 코드 -------------------------
+//    IFSTREAM IN{"INT 만개"}; //RAII
+//    INT NUM[1'0000];
+//
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        IN >> NUM[I];
+//    }
+//
+//    QSORT(NUM, 1'0000, 4, CUSTOM_SORT);
+//
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        COUT << NUM[I] << '\N';
+//    }
+
+    // -------------------교수님 코드 --------------------
+
+//    IFSTREAM IN{"INT 만개"};
+//
+//    INT NUM[1'0000];
+//
+//    FOR (INT I = 0; I < 1'0000; ++I) {
+//        IN >> NUM[I];
+//    }
+//
+//    QSORT(NUM, 1'0000, 4, [](CONST VOID *A, CONST VOID *B) {
+//        RETURN *(INT *) A - *(INT *) B;
+//    });
+//
+//    FOR (INT NUM: NUM)
+//        COUT << NUM << '\N';
+
+
+// [문제] 어떤 글자를 찾기 원하는지 물어봐라.
+// 파일 "소스.CPP"에 그 문자가 몇 개 있는 지 알려주자.
+// 이 과정을 영원히 반복하라.
+
+// ---------------------- 내 코드 --------------------
+//    IFSTREAM IN{"./../MAIN.CPP"};
+//
+//    IF (NOT IN)
+//        RETURN 0;
+//
+//    CHAR RESULT;
+//    COUT << "찾기 원하는 글자를 입력하세요 : ";
+//    CIN >> RESULT;
+//
+//    INT NUM{};
+//    CHAR GETTEXT;
+//    WHILE (IN.GOOD()) {
+//        IN >> GETTEXT;
+//        IF (GETTEXT == RESULT) {
+//            NUM++;
+//        }
+//    }
+//
+//    COUT << RESULT << "의 총 수 : " << NUM << ENDL;
+
+    // ----------------------교수님 코드 ---------------
+//    WHILE (TRUE) {
+//        IFSTREAM IN{"./../MAIN.CPP"};
+//        COUT << "찾을 문자? ";
+//        CHAR FINDCHAR;
+//        CIN >> FINDCHAR;
+//
+//        CHAR GETCHAR;
+//        INT CNT{};
+//        WHILE (IN >> GETCHAR) {
+//            IF (GETCHAR == FINDCHAR) {
+//                CNT++;
+//            }
+//        }
+//        COUT << FINDCHAR << "의 개수는 - " << CNT << "입니다." << ENDL;
+//    }
+
+    // [문제] 파일 "소스.CPP"에 있는 알파벳 소문자의 개수를 세서 다음과 같이 출력하라.
+    // A=1
+    // ------------------------ 내코드 ----------------------
+//    IFSTREAM IN{"./../MAIN.CPP"};
+//    CHAR ARRAY[]{};
+//    CHAR GETCHAR{};
+//    WHILE (IN.GOOD()) {
+//        IN >> GETCHAR;
+//        ARRAY[(INT) GETCHAR]++;
+//    }
+//
+//    FOR (INT I = 0; I < SIZEOF(ARRAY) / SIZEOF(CHAR); ++I) {
+//        COUT << ARRAY[I] << '\N';
+//    }
+    // ----------------------교수님 코드 ---------------
+//    INT NUM[26]{};
+//    IFSTREAM IN("./../MAIN.CPP");
+//    CHAR CH;
+//    WHILE (IN >> CH) {
+//        IF (ISLOWER(CH)) //'A' <= CH AND CH <= 'Z' C언어같은경우 이렇게
+//            NUM[CH - 'A']++;
+//    }
+//
+//    FOR (INT I = 0; I < 26; ++I) {
+//        COUT << STATIC_CAST<CHAR>('A' + I) << " - " << NUM[I] << '\N';
+//    }
+    // [문제] 파일 "소스.CPP"에 있는 알파벳 소문자를 모두 대문자로 바꿔 "소스대문자.TXT"에 기록하시오.
+    // ------------------------ 내코드 ----------------------
+//    IFSTREAM IN("./../MAIN.CPP");
+//    OFSTREAM OUT{"소스대문자.TXT"};
+//    CHAR CH;
+//    WHILE (IN >> CH) {
+//        CHAR UPPER1 = TOUPPER(CH);
+//        OUT << UPPER1;
+//    }
+
+    // ----------------------교수님 코드 ---------------
+    IFSTREAM IN("./../MAIN.CPP");
+    OFSTREAM OUT{"소스대문자.TXT"};
+
+    CHAR CH;
+    IN >> NOSKIPWS;
+    WHILE (IN >> CH) {
+        CH = TOUPPER(CH);
+        OUT << CH;
+    }
+}
+
+//내 QSORT 함수
+INT CUSTOM_SORT(CONST VOID *A, CONST VOID *B) { //CONST -> 이 원소의 값을 수정할 수 없다.
+    RETURN *(INT *) A - *(INT *) B;
+}

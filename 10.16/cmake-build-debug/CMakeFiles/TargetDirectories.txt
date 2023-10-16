@@ -1,0 +1,3 @@
+/Users/yuyeongbin/Documents/Obsidian Vault/대학교/1-2/C++/10.16/cmake-build-debug/CMakeFiles/10_16.dir
+/Users/yuyeongbin/Documents/Obsidian Vault/대학교/1-2/C++/10.16/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yuyeongbin/Documents/Obsidian Vault/대학교/1-2/C++/10.16/cmake-build-debug/CMakeFiles/rebuild_cache.dir
