@@ -1,3 +1,0 @@
-/Users/yuyeongbin/C++/9.18/cmake-build-debug/CMakeFiles/9_18.dir
-/Users/yuyeongbin/C++/9.18/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/yuyeongbin/C++/9.18/cmake-build-debug/CMakeFiles/rebuild_cache.dir
