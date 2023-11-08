@@ -83,6 +83,7 @@ int main() {
 
     MemoryMonster mons[]{1, 3, 5};
 
+    // get set 을통해 멤버변수가져오는게 중요
     qsort(mons, sizeof(mons) / sizeof(MemoryMonster), sizeof(MemoryMonster), [](const void *a, const void *b) {
         return ((MemoryMonster *) a)->getSize() - ((MemoryMonster *) b)->getSize();
     });

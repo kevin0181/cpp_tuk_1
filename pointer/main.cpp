@@ -1,16 +1,22 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-int cnt{};
-
-void f(string);
+void change(char &);
 
 int main() {
-    f("시험중");
+    char str[]{"The quick brown fox jumps over the lazy dog"};
+
+    for (int i = 0; i < strlen(str); ++i)
+        change(str[i]);
+
+    cout << str << '\n';
 }
 
-void f(string msg) {
-    cout << msg << " " << ++cnt;
-    f(msg);
+void change(char &str) {
+    if(str == ' '){
+        str = '-';
+    }else{
+        str = toupper(str);
+    }
 }
