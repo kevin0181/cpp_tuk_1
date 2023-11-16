@@ -4,21 +4,26 @@
 
 using namespace std;
 
-// [할 일] 클래스 STRING을 main()과 같이 코딩하는 건 아니다.
-// STRING의 선언부분을 STRING.h
-// STRING의 정의부분을 STRING.cpp
-// 파일 분리한다.
-
-
 int main() {
 
-    STRING::관찰 = true;
-    STRING s{"나는 표준 string"};
-    STRING t = move(s);               // C++11 이동생성
+//    STRING::관찰 = true;
+//    STRING s{"스트링"};
+//    STRING::관찰 = false;
+//
+//    s = "2023년 11월 8일" + s;
+//
+//    cout << "s -";
+//    s.show();
 
-    cout << "s -";
-    s.show();
-    cout << "t -";
-    t.show();
+    STRING s{"C++ Programming Language"};
+//     s.operator[] 에서 []는 indexOperator 라고함.
+    qsort(&s[0], s.length(), sizeof(char), [](const void *a, const void *b) {
+        return *(char *) a - *(char *) b;
+    });
 
+    for (int i = 0; i < s.length(); ++i) {
+        cout << s[i] << ' ';
+    }
+
+    cout << '\n';
 }
