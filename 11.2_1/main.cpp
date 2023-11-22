@@ -72,8 +72,8 @@ int main() {
 //    MemoryMonster b = a; // -> 복사 생성하는 동작이다~~~
 //    MemoryMonster c;
 
-    const int num = 0; //한정사 -> 초기값을 정해주고 읽기만 가능
-
+//    const int num = 0; //한정사 -> 초기값을 정해주고 읽기만 가능
+//
     MemoryMonster mons[]{1, 3, 5};
     cout << "\n\n\n";
     for (const MemoryMonster &mon: mons)

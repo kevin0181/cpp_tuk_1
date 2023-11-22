@@ -87,9 +87,9 @@ int main() {
 //    STRING s{"안녕하세요. 나는 스트링입니다."}; // string 했을때랑 좀 다른데 그이유는..?
 //    STRING t = move(s); // 이동생성자를 통해 이동을 시킬라고하는데 없어서 복사생성자를 통해서 실행됨. //move semantics
 
-    STRING s{"스트링"};
-    STRING t{"입니다."};
-    STRING u = s + t;
-    s.show();
-    t.show();
+//    STRING s{"스트링"};
+//    STRING t{"입니다."};
+//    STRING u = s + t;
+//    s.show();
+//    t.show();
 }
