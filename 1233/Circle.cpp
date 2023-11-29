@@ -21,7 +21,7 @@ Circle::Circle(const Circle& other):center(other.center), rad(other.rad){
 }
 
 Circle::~Circle() {
-
+	std::cout << "Circle ¼Ò¸êÀÚ È£Ãâ" << std::endl;
 }
 
 void Circle::draw() const {

@@ -16,7 +16,9 @@ Triangle::Triangle(const Triangle& other) :p1(other.p1), p2(other.p2), p3(other.
 
 };
 
-Triangle::~Triangle() {};
+Triangle::~Triangle() {
+	std::cout << "Triangle ¼Ò¸êÀÚ È£Ãâ" << std::endl;
+};
 
 void Triangle::draw() const {
 	std::cout << "»ï°¢Çü - (" << p1.x << "," << p1.y << "), ("

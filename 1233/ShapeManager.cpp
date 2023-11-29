@@ -8,6 +8,8 @@
 #include "ShapeManager.h"
 using namespace std;
 
+ShapeManager::ShapeManager(){}
+
 //----------------------
 ShapeManager::ShapeManager(int n)
 //----------------------
@@ -22,8 +24,15 @@ ShapeManager::ShapeManager(int n)
 ShapeManager::~ShapeManager()
 //----------------------
 {
+	// 아마 이 부분이 5번에 해당하는 부분인듯..?
+	for (int i = 0; i < capacity; ++i) {
+		delete shapes[i];
+	}
+
 	// 모든 객체가 정확하게 삭제되는지 반드시 확인하여야 한다.
 	delete[] shapes;					// 도형관리자가 관리하는 도형의 소멸자를 호출함
+	
+	cout << "ShapeManager 소멸자 호출 (shapes 삭제)" << endl;
 };
 
 //----------------------
@@ -45,7 +54,7 @@ void ShapeManager::draw() const
 	cout << "---------------------------------------------" << '\n' << '\n';
 	
 	for (int i = 0; i < nShape; ++i) {
-		cout << "[" << i << "] ";
+		cout << "[" << i+1 << "] ";
 		shapes[i]->draw();				// 다형성이 구현된다.
 	}
 	
