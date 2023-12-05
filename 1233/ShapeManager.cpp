@@ -1,22 +1,25 @@
 //----------------------------------------------------------------------------------------
-// ShapeManager.cpp							¿©·¯ °³ÀÇ µµÇüÀ» °ü¸®ÇÏ´Â Å¬·¡½º				
-// 
+// ShapeManager.cpp							ì—¬ëŸ¬ ê°œì˜ ë„í˜•ì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
+//
 // 2023.11.27
 //----------------------------------------------------------------------------------------
 
 #include <iostream>
 #include "ShapeManager.h"
+#include "Menu.h"
+
 using namespace std;
 
-ShapeManager::ShapeManager(){}
+ShapeManager::ShapeManager() {}
 
 //----------------------
 ShapeManager::ShapeManager(int n)
 //----------------------
 {
-	nShape = 0;								// Ã³À½ ¸¸µé¾îÁú ¶§´Â °ü¸®ÇÏ´Â µµÇü °¹¼ö°¡ 0ÀÓ
-	capacity = n;							// ÃÖ´ë n°³ÀÇ µµÇüÀ» ´ãÀ» ¼ö ÀÖÀ½
-	shapes = new Shape * [capacity];
+    nShape = 0;                                // ì²˜ìŒ ë§Œë“¤ì–´ì§ˆ ë•ŒëŠ” ê´€ë¦¬í•˜ëŠ” ë„í˜• ê°¯ìˆ˜ê°€ 0ì„
+    capacity = n;                            // ìµœëŒ€ nê°œì˜ ë„í˜•ì„ ë‹´ì„ ìˆ˜ ìˆìŒ
+    shapes = new Shape *[capacity];
+    deleteNShape = 0;
 };
 
 
@@ -24,44 +27,92 @@ ShapeManager::ShapeManager(int n)
 ShapeManager::~ShapeManager()
 //----------------------
 {
-	// ¾Æ¸¶ ÀÌ ºÎºĞÀÌ 5¹ø¿¡ ÇØ´çÇÏ´Â ºÎºĞÀÎµí..?
-	for (int i = 0; i < capacity; ++i) {
-		delete shapes[i];
-	}
+    // ì•„ë§ˆ ì´ ë¶€ë¶„ì´ 5ë²ˆì— í•´ë‹¹í•˜ëŠ” ë¶€ë¶„ì¸ë“¯..?
+//    for (int i = 0; i < capacity; ++i) {
+//        delete shapes[i];
+//    }
 
-	// ¸ğµç °´Ã¼°¡ Á¤È®ÇÏ°Ô »èÁ¦µÇ´ÂÁö ¹İµå½Ã È®ÀÎÇÏ¿©¾ß ÇÑ´Ù.
-	delete[] shapes;					// µµÇü°ü¸®ÀÚ°¡ °ü¸®ÇÏ´Â µµÇüÀÇ ¼Ò¸êÀÚ¸¦ È£ÃâÇÔ
-	
-	cout << "ShapeManager ¼Ò¸êÀÚ È£Ãâ (shapes »èÁ¦)" << endl;
+    // ëª¨ë“  ê°ì²´ê°€ ì •í™•í•˜ê²Œ ì‚­ì œë˜ëŠ”ì§€ ë°˜ë“œì‹œ í™•ì¸í•˜ì—¬ì•¼ í•œë‹¤.
+//    delete[] shapes;					// ë„í˜•ê´€ë¦¬ìê°€ ê´€ë¦¬í•˜ëŠ” ë„í˜•ì˜ ì†Œë©¸ìë¥¼ í˜¸ì¶œí•¨
+
+    cout << "ShapeManager ì†Œë©¸ì í˜¸ì¶œ (shapes ì‚­ì œ)" << endl;
 };
 
 //----------------------
-void ShapeManager::insert(Shape* a)
+void ShapeManager::insert(Shape *a)
 //----------------------
 {
-	shapes[nShape] = a;
-	nShape++;
+    if (nShape >= capacity) { // ë„í˜• ì¶”ê°€ê°€ ìµœëŒ€ í¬ê¸°ì— ë„ë‹¬ í–ˆì„ ê²½ìš°
+        changeNewArray(menu->addCapacitySize());
+    } else {
+        shapes[nShape] = a;
+        nShape++;
+    }
+}
+
+void ShapeManager::changeNewArray(int num) {
+    if (num != 0) {
+        Shape **newShapes = new Shape *[num]; //ìƒˆë¡œìš´ ë°°ì—´ ìƒì„±
+
+        // ê¸°ì¡´ ë°ì´í„°ë¥¼ ìƒˆë¡œìš´ ë°°ì—´ë¡œ ë³µì‚¬
+        for (int i = 0; i < capacity; ++i) {
+            newShapes[i] = shapes[i];
+        }
+        // ê¸°ì¡´ ë°°ì—´ ì‚­ì œ
+        delete[] shapes;
+
+        // ìƒˆë¡œìš´ ë°°ì—´ì„ ì‚¬ìš©í•˜ë„ë¡ ì—…ë°ì´íŠ¸
+        shapes = newShapes;
+        capacity = num;
+    }
 }
 
 //----------------------
 void ShapeManager::draw() const
 //----------------------
 {
-	cout << "---------------------------------------------" << '\n';
-	cout << "°ü¸®ÇÏ´Â ¸ğµç µµÇüÀ» ±×¸³´Ï´Ù." << '\n';
-	cout << "ÃÖ´ë " << capacity << "°³ÀÇ µµÇüÀ» ´ãÀ» ¼ö ÀÖ½À´Ï´Ù." << '\n';
-	cout << "¸ğµÎ " << nShape << "°³ÀÇ µµÇüÀÌ ÀÖ½À´Ï´Ù." << '\n';
-	cout << "---------------------------------------------" << '\n' << '\n';
-	
-	for (int i = 0; i < nShape; ++i) {
-		cout << "[" << i+1 << "] ";
-		shapes[i]->draw();				// ´ÙÇü¼ºÀÌ ±¸ÇöµÈ´Ù.
-	}
-	
-	cout << '\n';
+    cout << "---------------------------------------------" << '\n';
+    cout << "ê´€ë¦¬í•˜ëŠ” ëª¨ë“  ë„í˜•ì„ ê·¸ë¦½ë‹ˆë‹¤." << '\n';
+    cout << "ìµœëŒ€ " << capacity << "ê°œì˜ ë„í˜•ì„ ë‹´ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤." << '\n';
+    cout << "ëª¨ë‘ " << (nShape - deleteNShape) << "ê°œì˜ ë„í˜•ì´ ìˆìŠµë‹ˆë‹¤." << '\n';
+    cout << "---------------------------------------------" << '\n' << '\n';
 
-	cout << "---------------------------------------------" << '\n';
-	cout << "±×¸®±â¸¦ ¸¶Ä¨´Ï´Ù." << '\n';
-	cout << "---------------------------------------------" << '\n' << '\n';
+    for (int i = 0; i < nShape; ++i) {
+        if (shapes[i] != nullptr) {
+            cout << "[" << i + 1 << "] ";
+            shapes[i]->draw();                // ë‹¤í˜•ì„±ì´ êµ¬í˜„ëœë‹¤.
+        }
+    }
 
+    cout << '\n';
+
+    cout << "---------------------------------------------" << '\n';
+    cout << "ê·¸ë¦¬ê¸°ë¥¼ ë§ˆì¹©ë‹ˆë‹¤." << '\n';
+    cout << "---------------------------------------------" << '\n' << '\n';
+
+}
+
+
+void ShapeManager::deleteShape(Shape *a) {
+    for (int i = 0; i < nShape; ++i) {
+        if (shapes[i] != nullptr && a->getType() == shapes[i]->getType()) {
+            shapes[i]->deleteF();
+            shapes[i] = nullptr;
+            deleteNShape++;
+        }
+    }
+}
+
+void ShapeManager::deleteNumber(int num) {
+    shapes[num - 1]->deleteF();
+    shapes[num - 1] = nullptr;
+    deleteNShape++;
+}
+
+Shape **ShapeManager::getShape() {
+    return shapes;
+}
+
+int ShapeManager::getNShape() {
+    return nShape;
 }

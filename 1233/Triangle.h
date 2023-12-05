@@ -1,6 +1,6 @@
 #pragma once
 //----------------------------------------------------------------------------------------
-// Triangle.h				¼¼ Á¡À¸·Î »ï°¢ÇüÀ» Á¤ÀÇÇÒ ¼ö ÀÖ´Ù.
+// Triangle.h				ì„¸ ì ìœ¼ë¡œ ì‚¼ê°í˜•ì„ ì •ì˜í•  ìˆ˜ ìˆë‹¤.
 // 
 // 2023.11.27
 //----------------------------------------------------------------------------------------
@@ -9,12 +9,22 @@
 #include "Shape.h"
 
 class Triangle : public Shape {
-	Point p1, p2, p3;
+    Point p1, p2, p3;
 public:
-	Triangle();
-	Triangle(const Point&, const Point&, const Point&);
-	Triangle(const Triangle&);
-	~Triangle();
+    Triangle();
 
-	virtual void draw() const override;			// virtual functionÀ» overriding
+    Triangle(const Point &, const Point &, const Point &);
+
+    Triangle(const Triangle &);
+
+    ~Triangle();
+
+    virtual void draw() const override;            // virtual functionì„ overriding
+
+    virtual void saveDraw(std::ostream&) override;
+
+    virtual const std::type_info &getType() const override;
+
+    virtual void deleteF() override;
+
 };

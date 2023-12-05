@@ -1,18 +1,25 @@
 #pragma once
 //----------------------------------------------------------------------------------------
 // Shape.h					class Shape - Virtual Base Class
-//							ÀÌ Å¬·¡½º´Â Ãß»ó Å¬·¡½º(abstract class)ÀÌ´Ù.
+//							ì´ í´ë˜ìŠ¤ëŠ” ì¶”ìƒ í´ë˜ìŠ¤(abstract class)ì´ë‹¤.
 // 2023.11.27
 //----------------------------------------------------------------------------------------
 
-//#ifndef _Shape							// _ShapeÀÌ ¾Õ¿¡¼­ Á¤ÀÇµÇÁö ¾Ê¾Ò´Ù¸é
-#define _Shape							// _ShapeÀ» Á¤ÀÇÇÑ´Ù.
+//#ifndef _Shape							// _Shapeì´ ì•ì—ì„œ ì •ì˜ë˜ì§€ ì•Šì•˜ë‹¤ë©´
+#define _Shape                            // _Shapeì„ ì •ì˜í•œë‹¤.
+
+#include<iostream>
 
 class Shape {
 public:
-	Shape() {};
-	~Shape() {};
+    Shape() {};
 
-	virtual void draw() const = 0;
+    ~Shape() {};
+
+    virtual void draw() const = 0;
+
+    virtual void saveDraw(std::ostream&) = 0;
+
+    virtual const std::type_info &getType() const = 0; // ê°ì²´ì˜ íƒ€ì…ì„ ë¹„êµí•˜ê¸° ìœ„í•´ì„œ ë§Œë“¬
+    virtual void deleteF() = 0;
 };
-

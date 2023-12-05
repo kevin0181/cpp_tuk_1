@@ -1,6 +1,6 @@
 #pragma once
 //----------------------------------------------------------------------------------------
-// Rectangle.h						´ë°¢¼±¿¡ ÀÖ´Â Á¡ 2°³·Î »ç°¢ÇüÀ» Á¤ÀÇÇÒ ¼ö ÀÖ´Ù.				
+// Rectangle.h						ëŒ€ê°ì„ ì— ìˆëŠ” ì  2ê°œë¡œ ì‚¬ê°í˜•ì„ ì •ì˜í•  ìˆ˜ ìˆë‹¤.				
 // 
 // 2023.11.27
 //----------------------------------------------------------------------------------------
@@ -8,11 +8,22 @@
 #include "Shape.h"
 
 class Rectangle : public Shape {
-	Point p1, p2;
+    Point p1, p2;
 public:
-	Rectangle();
-	Rectangle(const Point&, const Point&);
-	Rectangle(const Rectangle&);
-	~Rectangle();
-	virtual void draw() const override;
+    Rectangle();
+
+    Rectangle(const Point &, const Point &);
+
+    Rectangle(const Rectangle &);
+
+    ~Rectangle();
+
+    virtual void draw() const override;
+
+    virtual void saveDraw(std::ostream&) override;
+
+    virtual const std::type_info &getType() const override;
+
+    virtual void deleteF() override;
+
 };

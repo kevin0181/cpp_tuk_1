@@ -1,32 +1,42 @@
 //----------------------------------------------------------------------------------------
-// Circle.cpp				
-// 
+// Circle.cpp
+//
 // 2023.11.27
 //----------------------------------------------------------------------------------------
 #include <iostream>
 #include "Circle.h"
 
-Circle::Circle():center(),rad(0.0) {
+Circle::Circle() : center(), rad(0.0) {
 }
 
-Circle::Circle(const Point& c, int r):center(c),rad(r) {
+Circle::Circle(const Point &c, int r) : center(c), rad(r) {
 
 }
 
-// º¹»ç»ı¼ºÀÚ¸¦ ÇÁ·Î±×·¥ÇÒ ÀÌÀ¯°¡ ÀÖ´Ù¸é ¸â¹öº¯¼öÀÇ °ªÀ» º¹»çÇØ¾ßÇÑ´Ù.
-// º¹»ç»ı¼ºÀÚ¸¦ ÇÁ·Î±×·¥ÇÏ¸é¼­ ¾Æ¹«°Íµµ ÇÏÁö ¾ÊÀ¸¸é ¸â¹öº¯¼ö´Â º¹»çµÇÁö ¾Ê´Â´Ù.
+// ë³µì‚¬ìƒì„±ìë¥¼ í”„ë¡œê·¸ë¨í•  ì´ìœ ê°€ ìˆë‹¤ë©´ ë©¤ë²„ë³€ìˆ˜ì˜ ê°’ì„ ë³µì‚¬í•´ì•¼í•œë‹¤.
+// ë³µì‚¬ìƒì„±ìë¥¼ í”„ë¡œê·¸ë¨í•˜ë©´ì„œ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•Šìœ¼ë©´ ë©¤ë²„ë³€ìˆ˜ëŠ” ë³µì‚¬ë˜ì§€ ì•ŠëŠ”ë‹¤.
 
-Circle::Circle(const Circle& other):center(other.center), rad(other.rad){
+Circle::Circle(const Circle &other) : center(other.center), rad(other.rad) {
 
 }
 
 Circle::~Circle() {
-	std::cout << "Circle ¼Ò¸êÀÚ È£Ãâ" << std::endl;
+//    std::cout << "Circle ì†Œë©¸ì í˜¸ì¶œ" << std::endl;
 }
 
 void Circle::draw() const {
-	// ±×¸²À» ±×¸®´Â ´ë½Å ¹®ÀÚ·Î Á¤º¸¸¦ Ãâ·ÂÇÑ´Ù
-	std::cout << "¿ø - Áß½ÉÁ¡(" << center.x << "." << center.y << ") ¹İÁö¸§ " << rad << '\n';
+    // ê·¸ë¦¼ì„ ê·¸ë¦¬ëŠ” ëŒ€ì‹  ë¬¸ìë¡œ ì •ë³´ë¥¼ ì¶œë ¥í•œë‹¤
+    std::cout << "ì› - ì¤‘ì‹¬ì (" << center.x << "." << center.y << ") ë°˜ì§€ë¦„ " << rad << '\n';
 }
 
-	
+void Circle::saveDraw(std::ostream &os) {
+    os << "ì› - ì¤‘ì‹¬ì (" << center.x << "." << center.y << ") ë°˜ì§€ë¦„ " << rad << '\n';
+}
+
+const std::type_info &Circle::getType() const {
+    return typeid(Circle);
+}
+
+void Circle::deleteF() {
+    delete this;
+}

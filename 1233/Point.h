@@ -1,20 +1,20 @@
 #pragma once
 //----------------------------------------------------------------------------------------
-// Point.h					Point class declaration - Çì´õ ÆÄÀÏÀº ¾ğÁ¦³ª °ø°³µÇ¾î¾ß ÇÑ´Ù.
-//							2Â÷¿ø ÁÂÇ¥ (x,y)¸¦ ³ªÅ¸³½´Ù.
+// Point.h					Point class declaration - í—¤ë” íŒŒì¼ì€ ì–¸ì œë‚˜ ê³µê°œë˜ì–´ì•¼ í•œë‹¤.
+//							2ì°¨ì› ì¢Œí‘œ (x,y)ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤.
 //
 // 2023.11.27
 //----------------------------------------------------------------------------------------
 
-//#ifndef _Point						// ÇÑ ¹ø¸¸ include ÇÒ ¼ö ÀÖµµ·Ï ÇÔ
-#define _Point						// Á¶°ÇºÎ ÄÄÆÄÀÏ - ±¸±Û¸µ ÇÒ °Í
+//#ifndef _Point						// í•œ ë²ˆë§Œ include í•  ìˆ˜ ìˆë„ë¡ í•¨
+#define _Point						// ì¡°ê±´ë¶€ ì»´íŒŒì¼ - êµ¬ê¸€ë§ í•  ê²ƒ
 
 struct Point
 {
-	double x, y;
-	
-	Point();
-	Point(double, double);
-	Point(const Point&) = default;
+    double x, y;
+
+    Point();
+    Point(double, double);
+    Point(const Point&) = default;
 
 };
